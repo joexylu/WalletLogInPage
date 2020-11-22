@@ -17,6 +17,12 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     width: "25ch"
+  },
+  button: {
+    boxShadow: "none",
+    textTransform: "none",
+    color: theme.palette.primary.main,
+    marginRight: theme.spacing(2),
   }
 }));
 
@@ -28,19 +34,18 @@ const Verification = ({ language }) => {
   const [newCode, setNewCode] = useState("Get Code");
 
   useEffect(() => {
-      console.log(countdown)
     if (countdown) {
       if (!time) {
         setTime(60);
         setCountdown(false);
-        return
+        return;
       }
       const timeInterval = setInterval(() => {
         setTime(time - 1);
       }, 1000);
       return () => clearInterval(timeInterval);
     }
-  }, [countdown,time]);
+  }, [countdown, time]);
 
   const handleClick = () => {
     setCountdown(true);
@@ -56,7 +61,7 @@ const Verification = ({ language }) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="end">
-              <Button onClick={handleClick}>
+              <Button variant="contained" size="small" className={classes.button} onClick={handleClick}>
                 {!countdown ? "Get Code" : `${time}s`}
               </Button>
             </InputAdornment>

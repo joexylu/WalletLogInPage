@@ -8,8 +8,16 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     minWidth: 50,
   },
-  selectEmpty: {
-    border: 'none',
+  select: {
+    "&:before": {
+      border: "none"
+    },
+    "&:hover:not(.Mui-disabled):before": {
+      border: "none"
+    },
+    "&:after": {
+      border: "none"
+    }
   }
 }));
 
@@ -33,7 +41,7 @@ function LanguageSelect({ chineseAndPortuguese, language, setLanguage }) {
         <Select
           value={whatLang}
           onChange={handleChange}
-          className={classes.selectEmpty}
+          className={classes.select}
         >
           <MenuItem value={chineseAndPortuguese.cn.code}>🇨🇳 CN</MenuItem>
           <MenuItem value={chineseAndPortuguese.pt.code}>🇧🇷 PT</MenuItem>

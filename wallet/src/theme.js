@@ -13,6 +13,24 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
+
+  overrides:{
+    MuiOutlinedInput: {
+        root: {
+            borderRadius: '25px'
+        }
+    },
+    MuiButton: {
+        root: {
+            borderRadius: '25px'
+        }
+    },
+    MuiSelect: {
+        selectMenu: {
+            border: 'none',
+        }
+    },
+  },
 });
 
 export default theme;

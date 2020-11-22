@@ -8,13 +8,8 @@ import PhoneNum from "./phoneNum";
 
 const useStyles = makeStyles(theme => ({
   LogInPage: {
-    background: "#ffea00",
     margin: "0 auto",
-    display: "flex",
     minWidth: 300,
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "center"
   }
 }));
 

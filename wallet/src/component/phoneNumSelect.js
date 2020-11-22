@@ -6,11 +6,18 @@ import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
-    minWidth: 50,
-    borderRadius: "10px",
+    minWidth: 50
   },
-  selectEmpty: {
-    border: "none"
+  select: {
+    "&:before": {
+      border: "none"
+    },
+    "&:hover:not(.Mui-disabled):before": {
+      border: "none"
+    },
+    "&:after": {
+      border: "none"
+    }
   }
 }));
 
@@ -29,7 +36,7 @@ const PhoneNumSelect = () => {
         <Select
           value={countryCode}
           onChange={handleChange}
-          className={classes.selectEmpty}
+          className={classes.select}
         >
           <MenuItem value={`🇨🇳 +86`}>🇨🇳 +86</MenuItem>
           <MenuItem value={`🇧🇷 +55`}>🇧🇷 +55</MenuItem>
