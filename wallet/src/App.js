@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     height: '100vh',
     textAlign: 'center',
-    background: '#009688',
   },
 }));
 

@@ -1,17 +1,16 @@
-import React, { useState } from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import { Grid, Typography, Button } from "@material-ui/core"
-import LanguageSelect from "./languageSelect"
-import PhoneNum from './phoneNum'
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Typography, Button } from "@material-ui/core";
+
+import Header from "./header";
+import Body from './body'
+import PhoneNum from "./phoneNum";
 
 const useStyles = makeStyles(theme => ({
   LogInPage: {
     background: "#ffea00",
-    paddingTop: 40,
-    margin: "auto",
+    margin: "0 auto",
     display: "flex",
-    width: "75vw",
-    height: "80vh",
     minWidth: 300,
     flexDirection: "column",
     justifyContent: "space-around",
@@ -26,6 +25,7 @@ function LogInPage() {
     cn: {
       phoneNum: "手机号码",
       verification: "请输入验证码",
+      submit: "提交",
       logInButton: "登录",
       code: "CN",
       flag: `🇨🇳`
@@ -33,6 +33,7 @@ function LogInPage() {
     pt: {
       phoneNum: "número de telefone",
       verification: "código de verificação",
+      submit: "Enviar",
       logInButton: "Conecte-se",
       code: "PT",
       flag: `🇧🇷`
@@ -43,16 +44,14 @@ function LogInPage() {
 
   return (
     <div className={classes.LogInPage}>
-      <LanguageSelect
+      <Header
         chineseAndPortuguese={chineseAndPortuguese}
         language={language}
         setLanguage={setLanguage}
       />
-      <Typography variant="h2">
-        Pagsmile wallet
-      </Typography>
 
-      <PhoneNum language={language}/>
+      <Body language={language} />
+
     </div>
   );
 }

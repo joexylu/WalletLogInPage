@@ -7,6 +7,7 @@ import Select from "@material-ui/core/Select";
 const useStyles = makeStyles(theme => ({
   formControl: {
     minWidth: 50,
+    borderRadius: "10px",
   },
   selectEmpty: {
     border: "none"
