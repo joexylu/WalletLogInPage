@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneNum = ({ language }) => {
+const PhoneNum = ({ language, chineseAndPortuguese }) => {
   const classes = useStyles();
   return (
     <div>
@@ -31,10 +31,11 @@ const PhoneNum = ({ language }) => {
         label={language.phoneNum}
         id="outlined-start-adornment"
         required
+        type="tel"
         className={clsx(classes.margin, classes.textField)}
         InputProps={{
         startAdornment: <InputAdornment position="start">
-            <PhoneNumSelect />
+            <PhoneNumSelect chineseAndPortuguese={chineseAndPortuguese} />
         </InputAdornment>
         }}
         variant="outlined"

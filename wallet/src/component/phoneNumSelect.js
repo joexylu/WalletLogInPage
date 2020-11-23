@@ -21,10 +21,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneNumSelect = () => {
+const PhoneNumSelect = ({chineseAndPortuguese}) => {
   const classes = useStyles();
 
-  const [countryCode, SetCountryCode] = useState(`🇨🇳 +86`);
+  const [countryCode, SetCountryCode] = useState(`+86`);
 
   const handleChange = event => {
     SetCountryCode(event.target.value);
@@ -38,8 +38,14 @@ const PhoneNumSelect = () => {
           onChange={handleChange}
           className={classes.select}
         >
-          <MenuItem value={`🇨🇳 +86`}>🇨🇳 +86</MenuItem>
-          <MenuItem value={`🇧🇷 +55`}>🇧🇷 +55</MenuItem>
+          <MenuItem value={`+86`}>
+            <img src={chineseAndPortuguese.cn.flag} alt="cnFlag" />
+            +86
+          </MenuItem>
+          <MenuItem value={`+55`}>
+            <img src={chineseAndPortuguese.pt.flag} alt="ptFlag" />
+            +55
+          </MenuItem>
         </Select>
       </FormControl>
     </div>

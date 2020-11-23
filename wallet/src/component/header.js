@@ -1,24 +1,23 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import LanguageSelect from "./languageSelect";
 
 const useStyles = makeStyles(() => ({
+  appStyles: {
+    boxShadow: "none",
+  },
   barStyles: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    background: '#fff',
   }
 }));
 
 const Header = ({ chineseAndPortuguese, language, setLanguage }) => {
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.appStyles}>
       <Toolbar className={classes.barStyles}>
-        <Typography >
-          Pagsmile Wallet
-        </Typography>
         <LanguageSelect
           chineseAndPortuguese={chineseAndPortuguese}
           language={language}

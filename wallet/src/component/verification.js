@@ -57,12 +57,13 @@ const Verification = ({ language }) => {
         label={language.verification}
         id="outlined-end-adornment"
         required
+        type="tel"
         className={clsx(classes.margin, classes.textField)}
         InputProps={{
           startAdornment: (
             <InputAdornment position="end">
               <Button variant="contained" size="small" className={classes.button} onClick={handleClick}>
-                {!countdown ? "Get Code" : `${time}s`}
+                {!countdown ? language.getVerif : `${time}s`}
               </Button>
             </InputAdornment>
           )

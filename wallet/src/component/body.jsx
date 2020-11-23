@@ -4,6 +4,7 @@ import { Grid, Typography, Button } from "@material-ui/core";
 
 import PhoneNum from "./phoneNum";
 import Verification from "./verification";
+import logo from "../pagsmile.png";
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
@@ -20,11 +21,11 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(1)
   },
   button: {
-      width: '18em',
+    width: "18em"
   }
 }));
 
-const Body = ({ language }) => {
+const Body = ({ language, chineseAndPortuguese }) => {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
@@ -32,21 +33,23 @@ const Body = ({ language }) => {
         container
         direction="column"
         alignItems="center"
-        md={9}
-        xs={12}
         className={classes.formContainer}
       >
-        <Grid item className={classes.item1}>
-          <Typography variant="h3">Pagsmile wallet</Typography>
+        <Grid item className={classes.item1} xs={12} md={9}>
+          <img src={logo} alt="logo" />
         </Grid>
-        <Grid item className={classes.item2}>
-          <PhoneNum language={language} />
+        <Grid item className={classes.item2} xs={12} md={9}>
+          <PhoneNum language={language} chineseAndPortuguese={chineseAndPortuguese} />
         </Grid>
-        <Grid item className={classes.item2}>
+        <Grid item className={classes.item2} xs={12} md={9}>
           <Verification language={language} />
         </Grid>
-        <Grid item className={classes.item2}>
-          <Button variant="contained" color="primary" className={classes.button}>
+        <Grid item className={classes.item2} xs={12} md={9}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
             {language.logInButton}
           </Button>
         </Grid>

@@ -43,8 +43,14 @@ function LanguageSelect({ chineseAndPortuguese, language, setLanguage }) {
           onChange={handleChange}
           className={classes.select}
         >
-          <MenuItem value={chineseAndPortuguese.cn.code}>🇨🇳 CN</MenuItem>
-          <MenuItem value={chineseAndPortuguese.pt.code}>🇧🇷 PT</MenuItem>
+          <MenuItem value={chineseAndPortuguese.cn.code}>
+            <img src={chineseAndPortuguese.cn.flag} alt="cnFlag" />
+            CN
+          </MenuItem>
+          <MenuItem value={chineseAndPortuguese.pt.code}>
+            <img src={chineseAndPortuguese.pt.flag} alt="ptFlag" />
+            PT
+          </MenuItem>
         </Select>
       </FormControl>
     </div>

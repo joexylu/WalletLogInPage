@@ -3,13 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography, Button } from "@material-ui/core";
 
 import Header from "./header";
-import Body from './body'
+import Body from "./body.jsx";
 import PhoneNum from "./phoneNum";
+import CNflag from "../CNFlag.png";
+import PTflag from "../PTFlag.png";
 
 const useStyles = makeStyles(theme => ({
   LogInPage: {
     margin: "0 auto",
-    minWidth: 300,
+    minWidth: 300
   }
 }));
 
@@ -20,18 +22,20 @@ function LogInPage() {
     cn: {
       phoneNum: "手机号码",
       verification: "请输入验证码",
+      getVerif: "获取",
       submit: "提交",
       logInButton: "登录",
       code: "CN",
-      flag: `🇨🇳`
+      flag: CNflag
     },
     pt: {
       phoneNum: "número de telefone",
       verification: "código de verificação",
+      getVerif: "Obtivermos",
       submit: "Enviar",
       logInButton: "Conecte-se",
       code: "PT",
-      flag: `🇧🇷`
+      flag: PTflag
     }
   };
 
@@ -45,8 +49,7 @@ function LogInPage() {
         setLanguage={setLanguage}
       />
 
-      <Body language={language} />
-
+      <Body language={language} chineseAndPortuguese={chineseAndPortuguese} />
     </div>
   );
 }
