@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 
 import PhoneNum from "./phoneNum";
 import Verification from "./verification";
